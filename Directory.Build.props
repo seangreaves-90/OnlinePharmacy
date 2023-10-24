@@ -1,0 +1,9 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Set Assembly Name -->
+		<AssemblyName>ScriptEase.$(MSBuildProjectName)</AssemblyName>
+    
+		<!-- Set Default Namespace -->
+		<RootNamespace>ScriptEase.$([System.String]::Copy($(MSBuildProjectName)).Replace(' ', '_'))</RootNamespace>
+	</PropertyGroup>
+</Project>

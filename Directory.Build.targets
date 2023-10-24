@@ -1,0 +1,27 @@
+<Project>
+	<ItemGroup>
+		<PackageReference Update="Azure.Identity" Version="1.7.0" />
+		<PackageReference Update="coverlet.collector" Version="6.0.0" />
+		<PackageReference Update="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+		<PackageReference Update="Microsoft.Data.SqlClient" Version="5.1.1" />
+		<PackageReference Update="Microsoft.Extensions.ApiDescription.Server" Version="6.0.5" />
+		<PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+		<PackageReference Update="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+		<PackageReference Update="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Update="NuGet.Frameworks" Version="5.11.0" />
+		<PackageReference Update="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Update="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+		<PackageReference Update="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+		<PackageReference Update="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+		<PackageReference Update="xunit" Version="2.5.3" />
+		<PackageReference Update="xunit.analyzers" Version="1.4.0" />
+		<PackageReference Update="xunit.assert" Version="2.5.3" />
+		<PackageReference Update="xunit.core" Version="2.5.3" />
+		<PackageReference Update="xunit.extensibility.core" Version="2.5.3" />
+		<PackageReference Update="xunit.runner.visualstudio" Version="2.5.3" />
+	</ItemGroup>
+
+	<Target Name="CopyFilesToRootBin" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(TargetDir)*.*&quot; &quot;$(SolutionDir)bin\&quot; /S /I /Y" />
+	</Target>
+</Project>

@@ -1,0 +1,49 @@
+<Project DefaultTargets="BuildAll" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <BinOutputPath>$(SolutionPath)\bin</BinOutputPath>
+	<ConfigurationProp>Debug</ConfigurationProp>
+    <TestResultsPath>$(SolutionPath)\TestResults</TestResultsPath>
+  </PropertyGroup>
+  
+  <Target Name="BuildData">
+    <Message Importance="high" Text="Building Pharmacy Data solution" />
+    <Exec Command="nuget.exe restore OnlinePharmacy.Data.sln -force" />
+    <MSBuild Projects="OnlinePharmacy.Data.sln" Targets="Build" Properties="Configuration=$(Configuration);Platform=Any CPU"/>
+    <OnError ExecuteTargets="OnFailure"/>
+  </Target>
+  
+  <Target Name="BuildServices">
+    <Message Importance="high" Text="Building Pharmacy Data solution" />
+    <Exec Command="nuget.exe restore OnlinePharmacy.Services.sln -force" />
+    <MSBuild Projects="OnlinePharmacy.Services.sln" Targets="Build" Properties="Configuration=$(Configuration);Platform=Any CPU"/>
+    <OnError ExecuteTargets="OnFailure"/>
+  </Target>
+  
+  <Target Name="BuildWebApi">
+    <Message Importance="high" Text="Building Pharmacy Data solution" />
+    <Exec Command="nuget.exe restore OnlinePharmacy.WebApi.sln -force" />
+    <MSBuild Projects="OnlinePharmacy.WebApi.sln" Targets="Build" Properties="Configuration=$(Configuration);Platform=Any CPU"/>
+    <OnError ExecuteTargets="OnFailure"/>
+  </Target>
+  
+  <Target Name="BuildTests">
+    <Message Importance="high" Text="Building Pharmacy Data solution" />
+    <Exec Command="nuget.exe restore OnlinePharmacy.Tests.sln -force" />
+    <MSBuild Projects="OnlinePharmacy.Tests.sln" Targets="Build" Properties="Configuration=$(Configuration);Platform=Any CPU"/>
+    <OnError ExecuteTargets="OnFailure"/>
+  </Target>
+  
+  <Target Name="CleanBin" Condition="Exists('$(BinOutputPath)')" >
+    <Message Importance="high" Text="Cleaning $(BinOutputPath)"/>
+    <ItemGroup>
+      <FilesToDelete Include="$(BinOutputPath)\**\*" />
+      <FoldersToRemove Include="$([System.IO.Directory]::GetDirectories(&quot;$(BinOutputPath)&quot;))" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)"/>
+    <RemoveDir Directories="@(FoldersToRemove)"/>
+    <OnError ExecuteTargets="OnFailure"/>
+  </Target>
+  
+  <Target Name="BuildAll" DependsOnTargets="CleanBin;BuildData;BuildServices;BuildWebApi;BuildTests"/>
+</Project>
