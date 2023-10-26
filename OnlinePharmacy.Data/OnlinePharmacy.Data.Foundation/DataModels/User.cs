@@ -1,6 +1,6 @@
 ﻿namespace ScriptEase.OnlinePharmacy.Data.DataModels
 {
-    public class User
+    public class User : ModelBase
     {
         public int UserId { get; set; }
         public string Name { get; set; }
