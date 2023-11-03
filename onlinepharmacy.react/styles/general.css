@@ -1,0 +1,268 @@
+﻿/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('path_to_your_image.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #D7E7F4;
+    color: #333333;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #333333; /* Neutral Color for text */
+    margin-top: 1em;
+}
+
+/* Links */
+a {
+    color: #FF6B6B; /* Accent Color */
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #F4F4F4; /* Secondary Color for hover effect */
+        text-decoration: underline;
+    }
+
+/* Buttons */
+button, input[type="submit"], input[type="button"] {
+    background-color: #FF6B6B; /* Accent Color */
+    color: #D7E7F4; /* Primary Color for text on button */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+        background-color: #F4F4F4; /* Secondary Color for hover effect */
+        color: #333333; /* Neutral Color for text on hover */
+    }
+
+/* Dividers */
+hr {
+    border-color: #B2B2B2; /* Tertiary Color */
+}
+
+/* Other common elements */
+p, ul, ol, li {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #B2B2B2; /* Tertiary Color */
+}
+
+th, td {
+    padding: 8px 12px;
+}
+/* Textual Elements */
+blockquote {
+    border-left: 5px solid #FF6B6B; /* Accent Color */
+    padding: 0 20px;
+    font-style: italic;
+}
+
+cite {
+    font-size: 0.9em;
+    color: #999999;
+}
+
+pre, code {
+    font-family: 'Courier New', monospace;
+    background-color: #F4F4F4; /* Secondary Color */
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+code {
+    padding: 2px 4px;
+}
+
+/* Form Elements */
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #B2B2B2; /* Tertiary Color */
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+        border-color: #FF6B6B; /* Accent Color for focus effect */
+        outline: none;
+    }
+
+textarea {
+    resize: vertical;
+}
+
+/* Lists */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Figures and Images */
+figure {
+    margin: 1em 0;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #999999;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+        nav ul li a {
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            nav ul li a:hover {
+                background-color: #FF6B6B; /* Accent Color */
+                color: #D7E7F4; /* Primary Color for text on hover */
+            }
+
+/* Additional Styles */
+details, summary {
+    cursor: pointer;
+}
+
+summary {
+    list-style-type: none;
+}
+
+details[open] summary {
+    color: #FF6B6B; /* Accent Color */
+}
+
+/* Media elements */
+video, audio {
+    max-width: 100%;
+}
+
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #E0E0E0; /* Subtle Border Color */
+    text-align: left;
+}
+
+th {
+    background-color: #D7E7F4; /* Primary Color */
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f5f5f5; /* Light hover effect for rows */
+}
+
+/* Buttons */
+button, input[type="submit"], input[type="button"] {
+    padding: 10px 20px;
+    background-color: #FF6B6B; /* Accent Color */
+    color: #D7E7F4; /* Primary Color for text */
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+        background-color: #E55555; /* Darkened accent color for hover effect */
+    }
+
+/* Links */
+a {
+    color: #FF6B6B; /* Accent Color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: #E55555; /* Darkened accent color for hover effect */
+    }
+
+/* Miscellaneous */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #E0E0E0; /* Subtle Border Color */
+    margin: 20px 0;
+}
+
+abbr {
+    border-bottom: 1px dotted #999;
+    cursor: help;
+}
+
+mark {
+    background-color: #FFFF99; /* Highlight Color */
+}
+
+/* Footer and Header */
+header, footer {
+    padding: 20px 0;
+    background-color: #D7E7F4; /* Primary Color */
+    color: #333;
+}
+
+    header h1, footer h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+
+    footer p, header p {
+        margin: 10px 0;
+    }
+
+/* For Scrollable Content */
+.scrollable-content {
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+/* Adjust based on specific needs or desired customizations. */
+
+
+
